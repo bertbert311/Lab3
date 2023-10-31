@@ -28,3 +28,21 @@ def test_bubble_sort_invalid():
     result = Lab3.bubble_sort(input_arr, 3)
 
     assert (result == [])
+
+def test_bubble_sort_str():
+    false = 0
+    result = 0
+    input_arr = ["a", 1, 3, "b" , "c" , 1]
+
+    if false == all(ele.isdigit() for ele in input_arr):
+        result = 2
+
+    assert(result == 2)
+
+def test_bubble_sort_excess():
+    result = 0
+    input_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    if len(input_arr) >= 10:
+        result = 1
+
+    assert(result == 1)
