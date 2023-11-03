@@ -22,17 +22,18 @@ def calculate_average_salary():
     total = 0
     average = 0
 
-    #add your implementation to calculate here
-
+    for item in employee_data:
+        total += item["salary"]
+        average = total/((len(item["name"]))+1)
 
     return average
 
 def get_employees_by_dept(department):
     result = []
-
+    for item in employee_data:
+        if(item["department"] == department):
+            result.append(item)
     # Add your implementation from here
-
-
     return result
 
 def display_all_records():
@@ -74,7 +75,6 @@ def display_main_menu():
         age_upper_limit = input("age (Uper Limit) = ")
         employee_info = get_employees_by_age_range(age_lower_limit, age_upper_limit)
         display_records(employee_info)
-
 
     elif option == '4':
         department = input("Name of Department = ")
